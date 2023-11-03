@@ -1,7 +1,18 @@
 import React from "react";
+import PageTemplate from "../components/templateMovieListPage";
 
-const FavouriteMoviesPage = () => {
-    return <h2>Favorite Movies</h2>
-}
+const FavouriteMoviesPage = (props) => {
+  const toDo = () => true;
+  // Get movies from local storage.
+  const movies = JSON.parse(localStorage.getItem("favourites")); 
 
-export default FavouriteMoviesPage
+  return (
+    <PageTemplate
+      title="Favourite Movies"
+      movies={movies}
+      selectFavorite={toDo}
+    />
+  );
+};
+
+export default FavouriteMoviesPage;
