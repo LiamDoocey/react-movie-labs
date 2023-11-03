@@ -48,12 +48,3 @@ Button.defaultProps = {
   size: 'medium',
   onClick: undefined,
 };
-
-
-export const Warning = {
-  args: {
-    primary: true,
-    label: 'Delete now',
-    backgroundColor: 'red',
-  }
-};
