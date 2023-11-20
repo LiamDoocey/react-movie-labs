@@ -72,7 +72,7 @@ export default function FilterMoviesCard(props) {
           onChange={handleTextChange}
         />
         <FormControl sx={{...formControl}}>
-          <InputLabel id="genre-label">Genre</InputLabel>
+          <InputLabel id="genre-label"><p>Genre</p></InputLabel>
           <Select
             labelId="genre-label"
             id="genre-select"

@@ -8,7 +8,6 @@ const MovieList = (props) => {
       <Movie key={m.id} movie={m} selectFavourite={props.selectFavourite}/>
     </Grid>
   ));
-  console.log("Next step.")
   return movieCards;
 };
 
