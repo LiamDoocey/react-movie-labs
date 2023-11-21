@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
+import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import Avatar from "@mui/material/Avatar";
@@ -19,6 +20,7 @@ import { Link } from "react-router-dom";
 export default function MovieCard({movie, action}) {
 
     const { favourites } = useContext(MoviesContext);
+    const { watchlist } = useContext(MoviesContext);
     
 
     if (favourites.find((id) => id === movie.id)) {
@@ -28,6 +30,13 @@ export default function MovieCard({movie, action}) {
         movie.favourite = false;
     }
 
+    if (watchlist.find((id) => id === movie.id)) {
+        movie.watchlist = true;
+    }
+    else{
+        movie.watchlist = false;
+    }
+
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardHeader
@@ -35,6 +44,10 @@ export default function MovieCard({movie, action}) {
                     movie.favourite ? (
                         <Avatar sx = {{ backgroundColor: "red" }}>
                             <FavoriteIcon />
+                        </Avatar>
+                    ) : movie.watchlist ? (
+                        <Avatar sx = {{ backgroundColor: "green" }}>
+                            <PlaylistAddCheckIcon />
                         </Avatar>
                     ) : null
                 }

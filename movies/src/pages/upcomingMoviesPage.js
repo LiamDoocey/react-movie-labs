@@ -5,7 +5,7 @@ import AddToWatchlistIcon from "../components/cardIcons/addToWatchlist";
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 
-const UpcomingPage = (props) => {
+const UpcomingPage = () => {
     
     const {  data, error, isLoading, isError }  = useQuery('upcoming', getUpcomingMovies)
 
