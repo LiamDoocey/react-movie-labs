@@ -10,7 +10,6 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
-import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import Avatar from "@mui/material/Avatar";
@@ -19,7 +18,7 @@ import { Link } from "react-router-dom";
 
 export default function MovieCard({movie, action}) {
 
-    const { favourites, addToFavourites } = useContext(MoviesContext);
+    const { favourites } = useContext(MoviesContext);
     
 
     if (favourites.find((id) => id === movie.id)) {
@@ -27,12 +26,6 @@ export default function MovieCard({movie, action}) {
     }
     else{
         movie.favourite = false;
-    }
-
-    const handleAddToFavourite = (e) => {
-        e.preventDefault();
-        addToFavourites(movie);
-        console.log(favourites)
     }
 
     return (

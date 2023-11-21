@@ -31,8 +31,6 @@ const FavouriteMoviesPage = () => {
     return q.data
   });
 
-  const toDo = () => true;
-
   if (favourites.length === 0) {
     return <h1>No Favourite Movies</h1>;
   }
